@@ -1,0 +1,13 @@
+
+```{r}
+renv::activate(profile = "02-test")
+```
+
+
+# A test for renv profiles
+
+```{r}
+packageVersion("dplyr")
+library(dplyr)
+sessionInfo()
+```
