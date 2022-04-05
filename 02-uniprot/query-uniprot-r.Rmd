@@ -1,0 +1,108 @@
+## Querying UniProt programmatically using R
+
+### Retrieve/ID mapping
+
+For a given list of UniProt accessions, obtain some metadata. The output you 
+use must be `tab` or ...
+
+The equivalent action in the UniProt website would be to:
+
+- Go to [Retrieve/ID mapping](https://www.uniprot.org/uploadlists/)
+- Paste your IDs
+- Click 'Submit'
+- Click 'Columns'
+- Choose the columns of interest by name
+
+See [this page](https://www.uniprot.org/help/uniprotkb_column_names) for a list
+of column names available.
+
+```{r}
+# some random proteins of interest
+my_proteins <- c("A5YKK6", "P02786")
+
+# the URL we will be querying
+my_url <- "https://www.uniprot.org/uploadlists/"
+```
+
+#### Using `httr2` package
+
+```{r}
+library(httr2)
+```
+
+```{r}
+# construct request
+req <- request(my_url) %>% 
+  req_url_query(
+    `query` = paste(my_proteins, collapse = " "),
+    `from` = "ACC+ID", 
+    `to` = "ACC",
+    `format` = "tab", 
+    `columns` = paste("id", "features", "go-id", sep = ",")
+  )
+```
+
+```{r}
+# look at request before we actually send it
+req %>% req_dry_run()
+```
+
+```{r}
+# send request and obtain response
+resp <- req %>% req_perform()
+resp
+```
+
+```{r}
+# parse response
+my_table <- resp %>% 
+  resp_body_string() %>% 
+  read.table(text = ., sep = "\t", header = TRUE)
+```
+
+```{r}
+head(my_table)
+```
+
+
+#### Using `httr` package
+
+```{r}
+library(httr)
+```
+
+```{r}
+# construct request
+req <- list(
+  query = paste(my_proteins, collapse = " "),
+  from = "ACC+ID",
+  to = "ACC",
+  format = "tab",
+  columns = paste("id", "features", "go-id", sep = ",")
+)
+```
+
+```{r}
+# look at request before we actually send it
+httr::modify_url(my_url, query = req)
+```
+
+```{r}
+# send request and obtain response
+resp <- httr::GET(
+  url = my_url,
+  query = req
+)
+resp$request
+```
+
+```{r}
+# parse response
+my_table <- resp %>% 
+  httr::content(type = "text", encoding = "UTF8") %>% 
+  read.table(text = ., sep = "\t", header = TRUE)
+```
+
+```{r}
+head(my_table)
+```

@@ -1,8 +1,5 @@
 
 
-```r
-renv::activate()
-```
 
 
 # References {-}

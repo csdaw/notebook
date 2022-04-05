@@ -1,14 +1,3 @@
-
-```{r}
-renv::activate()
-```
-
 `r if (knitr::is_html_output()) '
 # References {-}
 '`
-
-```{r}
-packageVersion("dplyr")
-library(dplyr)
-sessionInfo()
-```

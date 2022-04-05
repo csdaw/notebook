@@ -17,4 +17,8 @@ sharing-your-book
 publishing
 pages
 metadata-for-sharing
-a-test-for-renv-profiles
+uniprot
+querying-uniprot-programmatically-using-r
+retrieveid-mapping
+using-httr2-package
+using-httr-package

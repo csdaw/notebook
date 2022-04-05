@@ -3,5 +3,5 @@ Imports:
   downlit,
   xml2
 
-Config/renv/profiles/02-test/dependencies: dplyr@0.8.5
+Config/renv/profiles/02-uniprot/dependencies: httr, httr2
 
