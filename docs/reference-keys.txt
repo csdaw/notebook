@@ -22,3 +22,7 @@ querying-uniprot-programmatically-using-r
 retrieveid-mapping
 using-httr2-package
 using-httr-package
+git-and-github
+branches
+commits
+github-actions
