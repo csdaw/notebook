@@ -56,3 +56,11 @@ git clone git@github.com:csdaw/repo.git
 cd repo
 git submodule update --init --recursive
 ```
+
+If you want to make changes to the submodule and commit and push as usual, make
+sure you checkout a branch, like so:
+
+
+```bash
+git checkout main
+```
