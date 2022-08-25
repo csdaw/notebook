@@ -100,3 +100,6 @@ Where do jupyter files live?: `jupyter --paths`
 ...
 
 https://github.com/drivendata/cookiecutter-data-science
+
+https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry
+
