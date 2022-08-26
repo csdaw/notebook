@@ -129,6 +129,7 @@ conda config --show-sources</code></pre>
 </li>
 <li><p>List conda envs (should be base only at this point): <code>conda env list</code></p></li>
 <li><p>Set conda autoactivate base to false: <code>conda config --set auto_activate_base false</code></p></li>
+<li><p>Initialise conda for using in shell: <code>conda init zsh</code></p></li>
 </ol>
 <div id="side-notes" class="section level3" number="2.1.1">
 <h3>
@@ -177,6 +178,12 @@ print(python_version())</code></pre>
 <p>…</p>
 <p><a href="https://github.com/drivendata/cookiecutter-data-science" class="uri">https://github.com/drivendata/cookiecutter-data-science</a></p>
 <p><a href="https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry" class="uri">https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry</a></p>
+<p><code>conda create -n env_name python=3.10</code>
+<code>conda activate env_name</code></p>
+<p>Now juypter is installed in its own little environment using pipx. But if we
+run jupyter notebooks - <code>jupyter notebook</code> - from within our active conda environment,
+then we have access to any python package pip installed into the conda env and
+any conda package installed into the conda env.</p>
 
 </div>
 </div>
@@ -208,7 +215,7 @@ print(python_version())</code></pre>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2022-08-25.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2022-08-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -52,6 +52,7 @@ Also useful: https://lucasrla.github.io/python-on-macos/
     ```
 1. List conda envs (should be base only at this point): `conda env list`
 1. Set conda autoactivate base to false: `conda config --set auto_activate_base false`
+1. Initialise conda for using in shell: `conda init zsh`
 
 
 ### Side-notes
@@ -100,4 +101,12 @@ Where do jupyter files live?: `jupyter --paths`
 https://github.com/drivendata/cookiecutter-data-science
 
 https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry
+
+`conda create -n env_name python=3.10`
+`conda activate env_name`
+
+Now juypter is installed in its own little environment using pipx. But if we
+run jupyter notebooks - `jupyter notebook` - from within our active conda environment,
+then we have access to any python package pip installed into the conda env and
+any conda package installed into the conda env.
 
