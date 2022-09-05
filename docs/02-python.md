@@ -23,6 +23,7 @@ Also useful: https://lucasrla.github.io/python-on-macos/
 1. Switch to the version you just installed: `pyenv global 3.10.6`
 1. List installed packages (should just be pip and setuptools): `pip list`
 1. You may be prompted to update pip: `pip install --upgrade pip`
+1. Install wheel: `pip install wheel`
 1. Install [pipx](https://github.com/pypa/pipx) for installing Python-based CLI programs 
     e.g. youtube-dl: `pip install pipx`
 1. Run `pipx ensurepath` and restart shell.
@@ -57,6 +58,11 @@ Also useful: https://lucasrla.github.io/python-on-macos/
 
 ### Side-notes
 
+#### pip
+
+- Find outdated packages: `pip list --outdated`
+- Update an outdated package: `pip install name_of_pkg --upgrade`
+
 #### pipx
 
 pipx is installed in a specific version of Python which is provided by pyenv. 
@@ -64,6 +70,10 @@ Then tools installed via pipx are tied to that version. If you get rid of that
 python version you may have issues and need to reinstall the tools using 
 `pipx reinstall-all`, possibly with the flag `--python xxx`. See
 https://lucasrla.github.io/python-on-macos/pipx.html for more info.
+
+- No obvious way to list outdated packages
+- Update a package: `pipx upgrade name_of_pkg`
+- Update all packages: `pipx upgrade-all`
 
 #### poetry
 

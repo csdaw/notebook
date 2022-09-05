@@ -102,6 +102,7 @@ is itself derived from <a href="https://jacobian.org/2019/nov/11/python-environm
 <li><p>Switch to the version you just installed: <code>pyenv global 3.10.6</code></p></li>
 <li><p>List installed packages (should just be pip and setuptools): <code>pip list</code></p></li>
 <li><p>You may be prompted to update pip: <code>pip install --upgrade pip</code></p></li>
+<li><p>Install wheel: <code>pip install wheel</code></p></li>
 <li><p>Install <a href="https://github.com/pypa/pipx">pipx</a> for installing Python-based CLI programs
 e.g. youtube-dl: <code>pip install pipx</code></p></li>
 <li><p>Run <code>pipx ensurepath</code> and restart shell.</p></li>
@@ -135,28 +136,46 @@ conda config --show-sources</code></pre>
 <h3>
 <span class="header-section-number">2.1.1</span> Side-notes<a class="anchor" aria-label="anchor" href="#side-notes"><i class="fas fa-link"></i></a>
 </h3>
-<div id="pipx" class="section level4" number="2.1.1.1">
+<div id="pip" class="section level4" number="2.1.1.1">
 <h4>
-<span class="header-section-number">2.1.1.1</span> pipx<a class="anchor" aria-label="anchor" href="#pipx"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1.1.1</span> pip<a class="anchor" aria-label="anchor" href="#pip"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Find outdated packages: <code>pip list --outdated</code>
+</li>
+<li>Update an outdated package: <code>pip install name_of_pkg --upgrade</code>
+</li>
+</ul>
+</div>
+<div id="pipx" class="section level4" number="2.1.1.2">
+<h4>
+<span class="header-section-number">2.1.1.2</span> pipx<a class="anchor" aria-label="anchor" href="#pipx"><i class="fas fa-link"></i></a>
 </h4>
 <p>pipx is installed in a specific version of Python which is provided by pyenv.
 Then tools installed via pipx are tied to that version. If you get rid of that
 python version you may have issues and need to reinstall the tools using
 <code>pipx reinstall-all</code>, possibly with the flag <code>--python xxx</code>. See
 <a href="https://lucasrla.github.io/python-on-macos/pipx.html" class="uri">https://lucasrla.github.io/python-on-macos/pipx.html</a> for more info.</p>
+<ul>
+<li>No obvious way to list outdated packages</li>
+<li>Update a package: <code>pipx upgrade name_of_pkg</code>
+</li>
+<li>Update all packages: <code>pipx upgrade-all</code>
+</li>
+</ul>
 </div>
-<div id="poetry" class="section level4" number="2.1.1.2">
+<div id="poetry" class="section level4" number="2.1.1.3">
 <h4>
-<span class="header-section-number">2.1.1.2</span> poetry<a class="anchor" aria-label="anchor" href="#poetry"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1.1.3</span> poetry<a class="anchor" aria-label="anchor" href="#poetry"><i class="fas fa-link"></i></a>
 </h4>
 <p>We have configured poetry to not create virtualenvs for you. I think I’ll just
 use basic venv for now…</p>
 <p>Update poetry: <code>pipx upgrade poetry</code>.</p>
 <p>Uninstall poetry: <code>pipx uninstall poetry</code>.</p>
 </div>
-<div id="jupyterlab" class="section level4" number="2.1.1.3">
+<div id="jupyterlab" class="section level4" number="2.1.1.4">
 <h4>
-<span class="header-section-number">2.1.1.3</span> jupyterlab<a class="anchor" aria-label="anchor" href="#jupyterlab"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1.1.4</span> jupyterlab<a class="anchor" aria-label="anchor" href="#jupyterlab"><i class="fas fa-link"></i></a>
 </h4>
 <p>Run jupyterlab: <code>jupyter lab</code></p>
 <p>Check which python version is running:</p>
@@ -215,7 +234,7 @@ any conda package installed into the conda env.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2022-08-26.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2022-09-05.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

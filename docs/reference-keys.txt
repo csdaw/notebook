@@ -20,6 +20,7 @@ metadata-for-sharing
 python
 environment-setup-on-unix
 side-notes
+pip
 pipx
 poetry
 jupyterlab
